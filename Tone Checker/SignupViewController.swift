@@ -16,9 +16,11 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         configureTextField()
         configureUserPasswordTextField()
         configureSignupButton()
+        navigationItem.rightBarButtonItem = doneButton
     }
     
     private func configureTextField() {
@@ -64,5 +66,10 @@ class SignupViewController: UIViewController {
         let userPassword = userPasswordTextField.text
         guard let userEmail, let userPassword else { return }
         print(userEmail  + " " + userPassword + "\n")
+    }
+    
+    
+    @objc private func dismissVC() {
+        dismiss(animated: true)
     }
 }

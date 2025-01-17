@@ -19,7 +19,6 @@ class MainPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        applyGrandientBackground(startColor: UIColor.black, endColor: UIColor.systemCyan)
         view.backgroundColor = .white
         configureBlueBackground()
         configureLogoImage()
@@ -72,7 +71,7 @@ class MainPageViewController: UIViewController {
     
     private func configureDescriptionLabelLabel() {
         view.addSubview(descriptionLabel)
-        descriptionLabel.text = "Empowering Your Best Self, One Habbit at a Time."
+        descriptionLabel.text = "Chinese has 4 tones - but what are they and how are they pronounced?"
         
         NSLayoutConstraint.activate([
             descriptionLabel.topAnchor.constraint(equalTo: welcomeTitleLabel.bottomAnchor, constant: 20),
@@ -119,7 +118,8 @@ class MainPageViewController: UIViewController {
     @objc func signupUserAction() {
         print("Signup button tapped")
         let destination = SignupViewController()
-        present(destination, animated: true)
+        let navigationController = UINavigationController(rootViewController: destination)
+        present(navigationController, animated: true)
     }
     
     
@@ -173,7 +173,7 @@ class MainPageViewController: UIViewController {
     
 }
 
-#Preview {
-    MainPageViewController()
-}
+//#Preview {
+//    MainPageViewController()
+//}
 
